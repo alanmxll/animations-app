@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'widgets/form_container.dart';
+import 'widgets/sign_up_button.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -36,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     FormContainer(),
+                    SignUpButton(),
                   ],
                 ),
               ],
