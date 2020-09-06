@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
 
 import 'widgets/form_container.dart';
 import 'widgets/sign_up_button.dart';
@@ -33,6 +33,8 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
+    timeDilation = 1;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(

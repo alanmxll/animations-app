@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
 
-  StaggerAnimation({this.controller});
+  StaggerAnimation({this.controller})
+      : buttonSqueeze = Tween(begin: 320.0, end: 60.0).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.0, 0.150),
+          ),
+        );
+
+  final Animation<double> buttonSqueeze;
 
   Widget _buildAnimation(BuildContext context, Widget child) {
     return Padding(
       padding: EdgeInsets.only(bottom: 50.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          controller.forward();
+        },
         child: Container(
-          width: 320.0,
+          width: buttonSqueeze.value,
           height: 60.0,
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -21,18 +30,29 @@ class StaggerAnimation extends StatelessWidget {
               Radius.circular(30.0),
             ),
           ),
-          child: Text(
-            'Sign In',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.w300,
-              letterSpacing: 0.3,
-            ),
-          ),
+          child: _buildInside(context),
         ),
       ),
     );
+  }
+
+  Widget _buildInside(BuildContext context) {
+    if (buttonSqueeze.value > 75) {
+      return Text(
+        'Sign In',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.w300,
+          letterSpacing: 0.3,
+        ),
+      );
+    } else {
+      return CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        strokeWidth: 1.0,
+      );
+    }
   }
 
   @override
