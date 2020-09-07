@@ -1,16 +1,10 @@
 # animation_app
 
-A new Flutter application.
 
-## Getting Started
+This application was created in order to learn and demonstrate some of the possible animations to create
+using Flutter. It has no functionality implementation, only visual with object animations and
+transitions between screens.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Este aplicativo foi criado no intuito de aprender e demonstrar algumas das animações possíveis de criar
+utilizando Flutter. Não possui nenhuma implementação de funcionalidade, apenas visual com animações
+de objetos e transições entre telas.
