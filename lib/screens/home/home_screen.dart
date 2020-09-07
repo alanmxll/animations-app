@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart' show timeDilation;
 
 import './widgets/stagger_animation.dart';
 
@@ -20,6 +19,8 @@ class _HomeScreenState extends State<HomeScreen>
       vsync: this,
       duration: Duration(seconds: 2),
     );
+
+    _controller.forward();
   }
 
   @override
